@@ -1,0 +1,527 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    /*font-family: 'Teko', sans-serif;*/
+    background-image: url(../obr/konf.jpg);
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    /*background: #337ab7;*/
+}
+
+a {
+    text-decoration: dotted underline;
+    color: #0c5cac;
+    cursor: pointer;
+}
+
+
+    p::selection, a::selection, td::selection, li::selection, h1::selection, h2::selection, h3::selection {
+        background: #0c0c0c;
+        color: white;
+    }
+
+    p::-moz-selection, a::-moz-selection, td::-moz-selection, li::-moz-selection, h1::-moz-selection, h2::-moz-selection, h3::-moz-selection {
+        background: #0c0c0c;
+        color: white;
+    }
+
+.hlavicka {
+    float: top;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    margin: 5pt 5pt 5pt 5pt;
+}
+
+    .hlavicka a {
+        font-size: 40px;
+        font-weight: bold;
+        color: #0c0c0c;
+        text-decoration: none;
+        padding: 0px 0px 0px 10px;
+    }
+
+.paticka {
+    margin: 5pt;
+    width: auto;
+    background: #FFFFFF;
+    color: #88888888;
+}
+
+.horni {
+    valign: top;
+}
+
+.obsah {
+    margin: 0pt 5pt 5pt 5pt;
+    font-size: 14px;
+    margin-left: 10px;
+    padding: 20px 20px 20px 20px;
+}
+
+
+.wrap {
+    width: 1024px;
+    margin: 0 auto;
+}
+
+
+.full-width {
+    width: 100%;
+}
+
+
+#wrap a {
+    text-decoration: none;
+    color: #000000;
+}
+
+
+#top {
+    float: left;
+    width: 100%;
+}
+
+.podpis {
+    font-size: 14px;
+    font-weight: bold;
+    float: right;
+}
+
+.menu {
+    font-family: 'Teko', sans-serif;
+    margin-left: 10pt;
+    float: left;
+}
+
+
+#podpis {
+    float: right;
+    margin: 5px;
+}
+
+
+#nadpis {
+    font-family: 'Teko', sans-serif;
+    text-align: center;
+}
+
+
+
+#time {
+    font-size: 14px;
+    font-weight: bold;
+    float: left;
+    margin: 15px;
+    margin-top: 17px;
+}
+
+.o_uzivateli {
+    border-left: 3px solid #0c0c0c;
+    padding-left: 10px;
+    float: right;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+#nahoru {
+    border-left: 3px dashed #0c0c0c;
+    margin-top: 5px;
+    padding: 10px;
+    float: left;
+    vertical-align: center;
+    font-weight: bold;
+}
+
+    #nahoru a {
+        font-size: 16px;
+        color: #0c0c0c;
+        text-decoration: none;
+    }
+
+        #nahoru a:hover {
+            /*color: blue;*/
+        }
+
+#valid {
+    border-right: 2px dashed #0000FF;
+    margin-top: 4px;
+    padding: 4px;
+    float: right;
+    margin-right: 11px;
+    padding-right: 9px;
+}
+
+
+#logo {
+    filter: grayscale(100);
+    margin-top: 5px;
+    margin-left: 2px;
+}
+
+    #logo:hover {
+        filter: none;
+    }
+
+
+.uzivatel {
+    font-size: 14px;
+}
+
+
+    .uzivatel a {
+        font-size: 14px;
+        color: blue;
+    }
+
+
+        .uzivatel a:hover {
+            text-decoration: underline;
+        }
+
+
+.prihlasovani {
+    color: white;
+    background: #0c0c0c;
+    padding-left: 5px;
+    padding-right: 5px;
+    cursor: pointer;
+}
+
+
+    .prihlasovani a {
+        font-size: 18px;
+        color: white !important;
+        font-weight: normal;
+    }
+
+
+    .prihlasovani:hover {
+        background: white;
+        color: #0c0c0c !important;
+        border: 2px solid #0c0c0c;
+    }
+
+    .prihlasovani a:hover {
+        background: white;
+        color: #0c0c0c !important;
+    }
+
+
+#left {
+    float: left;
+    width: 20%;
+}
+
+
+#menulog {
+    padding: 5px;
+    float: top;
+    margin-bottom: 10px;
+}
+
+
+#menu {
+    padding: 5px;
+    float: bottom;
+}
+
+
+#content {
+    font-size: 14px;
+    margin-left: 10px;
+    padding: 5px;
+    padding-left: 15px;
+    float: left;
+    width: 75%;
+}
+
+
+    #content h1 {
+        font-size: 18px;
+        margin: 3px;
+        margin-bottom: 0px;
+        color: #000000;
+    }
+
+
+    #content a {
+        color: #777777;
+        text-decoration: underline;
+    }
+
+
+        #content a:hover {
+            text-decoration: underline;
+            color: #AA0000;
+        }
+
+
+#upload {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    width: 100%;
+    float: left;
+    margin-top: 4px;
+    font-size: 16px;
+}
+
+
+#uploadbutton {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    width: 33%;
+    background: #0c0c0c;
+    padding: 2px;
+    float: left;
+    margin-top: 4px;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+}
+
+#recenzebutton {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    width: 88%;
+    background: #0c0c0c;
+    padding: 2px;
+    float: left;
+    margin: 4px;
+    margin-left: 9px;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+}
+
+    #uploadbutton:hover, #recenzebutton:hover {
+        background: white;
+        color: #0c0c0c;
+        border: 2px solid #0c0c0c;
+    }
+
+
+#odrazka {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 48%;
+}
+
+
+#vysvetlivky {
+    font-size: 12px;
+    color: #999999;
+    margin: 5px;
+    margin-top: 10px;
+    list-style-type: none;
+}
+
+
+.formtable {
+    border-radius: 5px;
+    margin-bottom: 1px;
+    margin-top: 5px;
+}
+
+
+    .formtable td {
+        font-size: 15px;
+        padding: 2px;
+    }
+
+
+.usertable, .admintable {
+    border-collapse: collapse;
+    border-style: hidden;
+    margin-top: 10px;
+}
+
+
+
+    .usertable td {
+        border: solid 1px #0c0c0c;
+        font-size: 15px;
+        padding: 10px;
+        text-align: center;
+    }
+
+
+    .usertable tr.nadpis td {
+        font-size: 20px;
+        border-bottom: 2px solid #0c0c0c;
+    }
+
+
+    .admintable td {
+        border: solid 1px #0c0c0c;
+        font-size: 13px;
+        padding: 10px;
+        text-align: center;
+    }
+
+
+    .admintable tr.nadpis td {
+        font-size: 15px;
+        border-bottom: 2px solid #0c0c0c;
+    }
+
+        .admintable tr.nadpis td.nadpis2 {
+            font-size: 15px;
+            border-bottom: 1px dashed #0c0c0c;
+        }
+
+
+
+    .admintable tr.nadpisrec td {
+        font-size: 15px;
+        border: 1px #0c0c0c dashed;
+        border-bottom: 2px #0c0c0c solid;
+    }
+
+
+
+    .admintable td.recenze {
+        font-size: 10px;
+        padding: 2px;
+        height: 20px;
+        border: 1px #0c0c0c dashed;
+    }
+
+    .admintable td.recenzelast {
+        font-size: 10px;
+        padding: 2px;
+        height: 20px;
+        border: 1px #0c0c0c dashed;
+        border-bottom: 1px #0c0c0c solid;
+    }
+
+
+    .admintable td.odkaz {
+        border-bottom-style: hidden;
+    }
+
+        .admintable td.odkaz a {
+            margin: 6px;
+        }
+
+
+    .admintable td.odkazlast {
+        border-bottom: 1px solid #0c0c0c;
+        padding: 2px;
+        padding-bottom: 0px;
+    }
+
+        .admintable td.odkazlast a {
+            margin: 6px;
+        }
+
+
+
+.selectrec {
+    padding: 1px;
+    margin: 10px;
+}
+
+.error {
+    color: #FF0000;
+    font-size: 0.9em;
+}
+
+
+.item {
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    background: #0c0c0c;
+    /*border-radius: 6px;*/
+    margin: 3px;
+    padding: 7px;
+    padding-right: 0px;
+    cursor: pointer;
+}
+
+
+.itemact {
+    text-align: center;
+    font-size: 25px;
+    /*background: #77AAFF;*/
+    background: white;
+    color: #0c0c0c;
+    /*border-radius: 6px;*/
+    margin: 3px;
+    padding: 5px;
+    padding-right: 0px;
+    border: 3px solid #0c0c0c;
+    cursor: pointer;
+}
+
+
+.item:hover {
+    background: white;
+    color: #0c0c0c;
+}
+
+
+.itemact:hover {
+    background: #0c0c0c;
+    color: white;
+}
+
+
+.bg {
+    background: #FFFFFF;
+    /*border-radius: 8px;*/
+    border: 1px solid #0c0c0c;
+}
+
+
+.podpisrow {
+    float: right;
+}
+
+
+.button {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    width: 100%;
+    background: #0c0c0c;
+    float: left;
+    margin-top: 4px;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+}
+
+
+    .button:hover {
+        background: white;
+        color: #0c0c0c;
+        border: 2px solid #0c0c0c;
+    }
+
+
+.warning {
+    margin: 5px;
+    font-weight: bold;
+}
+
+
+.userodkaz {
+    font-size: 16px;
+    margin: 10px;
+}
+
+
+.odrazka {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 48%;
+}

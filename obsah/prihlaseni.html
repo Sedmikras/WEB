@@ -1,0 +1,43 @@
+<h1>Zadejte své přihlašovací údaje:</h1>
+<form name="prihlas" action="" onsubmit="event.preventDefault(); prihlaseni();" method="post">
+
+    <table class="formtable">
+        <tr>
+            <td>
+                Uživatelské jméno:
+            </td>
+            <td>
+                <input type="text" name="nick" value="" id="nickname_textbox" />
+            </td>
+            <td>
+                <div class="error jmeno">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Heslo:
+            </td>
+            <td>
+                <input type="password" name="heslo" value="" id="password_textbox" />
+            </td>
+            <td>
+                <div class="error heslo">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a class="button" onclick="$('form').submit()">PŘIHLÁSIT</a>
+            </td>
+            <td>
+                <a class="button" onclick='zmenObsah("","obsah/registrace.html")'>NEMÁM ÚČET</a>
+            </td>
+        </tr>
+    </table>
+
+</form>
+
+<div class="warning">
+    ! upozornění: heslo je <a href="http://en.wikipedia.org/wiki/Case_sensitivity" target="_blank">case-sensitive</a> !
+</div>

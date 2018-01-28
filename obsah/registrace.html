@@ -1,0 +1,68 @@
+<h1>Vyplňte své registrační údaje:</h1>
+<form name="reg" action="" onsubmit="event.preventDefault(); validujRegistraci();" method="post">
+    <table class="formtable">
+        <tr>
+            <td>
+                Uživatelské jméno:
+            </td>
+            <td>
+                <input type="text" name="nick" value="" />
+            </td>
+            <td>
+                <div class="error">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Heslo:
+            </td>
+            <td>
+                <input type="password" name="heslo" value="" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Zopakujte heslo:
+            </td>
+            <td>
+                <input type="password" name="hesloznovu" value="" />
+            </td>
+            <td>
+                <div class="error">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Jméno:
+            </td>
+            <td>
+                <input type="text" name="jmeno" value="" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Příjmení:
+            </td>
+            <td>
+                <input type="text" name="prijmeni" value="" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a class="button" onclick="$('form').submit()">REGISTROVAT</a>
+            </td>
+            <td>
+                <a class="button" onclick='zmenObsah("","obsah/prihlaseni.html")'>UŽ MÁM ÚČET</a>
+            </td>
+        </tr>
+    </table>
+</form>
+
+
+<div class="warning">
+    ! upozornění: heslo je <a href="http://en.wikipedia.org/wiki/Case_sensitivity" target="blank">case-sensitive</a> !
+</div>
+
+

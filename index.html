@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Konference, předmět WEB</title>
+    <meta name="description" content="HTML code for school work" ></meta>
+    <meta http-equiv="content-Type" content="text/html; charset=utf-8" ></meta>
+    <meta http-equiv="content-Language" content="cs" ></meta>
+    <!--<link href="../boostrap.css" rel="stylesheet"> -->
+    <script type="text/javascript" src="skripty/jquery-3.2.1.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Teko" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="styly/stylesheet.css" />
+    <script type="text/javascript" src="skripty/index.js"></script>
+    <script type="text/javascript" src="skripty/uzivatelskeFunkce.js"></script>
+    <script type="text/javascript" src="skripty/formularRegistrace.js"></script>
+	<script type="text/javascript" src="skripty/administratorskeFunkce.js"></script>
+	<script type="text/javascript" src="skripty/recenzentskeFunkce.js"></script>
+	
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            initialize();
+        });
+    </script>
+</head>
+
+<body class="body">
+    <div class="wrap">
+        <div class="hlavicka bg" id="zacatek">
+            <a id="nadpis" href="index.html">
+                KONFERENCE na předmět WEB
+            </a>
+
+            <table class="o_uzivateli">
+                <tr>
+                    <td class="uzivatel">
+                        Nepřihlášen
+                    </td>
+                </tr>
+                <tr>
+                    <td class="prihlasovani" onclick='zmenObsah("","obsah/prihlaseni.html")'>
+                        <a>přihlásit</a>
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+
+        <table width="99%">
+            <tr>
+                <td valign="top" class="menu bg" width="90%">
+                    <div>
+                        <table class="leve_menu" width="100%" cellspacing="5">
+                            <tr><td class="itemact" onclick='zmenObsah(this,"obsah/about.html")'><a></a>O KONFERENCI</td></tr>
+                            <tr><td class="item" onclick='zmenObsah(this,"obsah/temata.html")'><a></a>TÉMATA</td></tr>
+                            <tr><td class="item" onclick='zmenObsah(this,"obsah/terminy.html")'><a></a>TERMÍNY</td></tr>
+                            <tr><td class="item" onclick='zmenObsah(this,"obsah/organizatori.html")'><a></a>ORGANIZÁTOŘI</td></tr>
+                            <tr><td class="item" onclick='zmenObsah(this,"obsah/mistokonani.html")'><a></a>MÍSTO KONÁNÍ</td></tr>
+                            <tr><td class="item" onclick='zmenObsah(this,"obsah/sponzori.html")'><a></a>SPONZOŘI</td></tr>
+                            <tr><td class="item" onclick='zmenObsah(this,"obsah/pokynyautorum.html")'><a></a>POKYNY AUTORŮM</td></tr>
+                        </table>
+                    </div>
+                </td>
+
+                <td class="plna-tloustka" width="70%" valign="top" align="left">
+                    <div class="obsah bg"></div>
+                </td>
+            </tr>
+        </table>
+
+
+
+
+        <div class="paticka bg">
+            <table class="full-width">
+                <tr>
+                    <td id="time">
+                    <script type="text/javascript" src="skripty/time.js"></script> </td>
+                    <td id="nahoru"><a href="#zacatek">nahoru</a></td>
+                    <td align="right">
+                        <table class="podpis">
+                            <tr>
+                                <td>
+                                    Přemysl Kouba ©
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    2018
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td id="logo"><a href="http://www.kiv.zcu.cz/" target="_blank"><img src="obr/zcu.png" alt="logo ZČU" height="40px" ></img></a></td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<form name="nahrani" action="" method="post" onsubmit="event.preventDefault(); validujNahrani();" enctype="multipart/form-data">
+
+    <table class="formtable">
+        <tr>
+            <td>
+                <input id="upload" type="file" name="soubor" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Název: <input id="nazev" type="text" name="nazev" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Autoři: <input id="autori" type="text" name="autori" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Abstract:
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <textarea cols="40" rows="10" style="resize:none" name="abstrakt" id="abstrakt"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <!--<input id="uploadbutton" class="button" type="submit" value="Nahrát" />-->
+                <a id="uploadbutton" class="button" onclick= "$('form').submit()">NAHRÁT</a>
+            </td>
+        </tr>
+    </table>
+
+
+</form>
+
+<hr id="odrazka" />
+
+<p>
+
+    Přejít na <a onclick="klikni()">seznam příspěvků</a>.
+
+</p>
