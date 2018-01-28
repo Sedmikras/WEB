@@ -8,4 +8,4 @@ Semestrální práce pro KIV/WEB 2017/18
 /skritpy/php/ - php getters\
 /skripty/ - all JS - with AJAX callings\
 /styly/ - css file\
-index.html - main web html\
+index.html - main web html
