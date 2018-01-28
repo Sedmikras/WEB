@@ -1,6 +1,7 @@
 # WEB
 Semestrální práce pro KIV/WEB 2017/18
 
+Content:
 /obr/ - images for web site\
 /obsah/ - html content\
 /potvrzeni/ - small html files used as confirmation\
