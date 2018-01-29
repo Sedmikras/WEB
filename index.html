@@ -38,7 +38,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="prihlasovani" onclick='zmenObsah("","obsah/prihlaseni.html")'>
+                    <td class="prihlasovani" onclick='$(document).find("td.itemact").attr("class", "item");zmenObsah("","obsah/prihlaseni.html")'>
                         <a>přihlásit</a>
                     </td>
                 </tr>
@@ -58,6 +58,7 @@
                             <tr><td class="item" onclick='zmenObsah(this,"obsah/mistokonani.html")'><a></a>MÍSTO KONÁNÍ</td></tr>
                             <tr><td class="item" onclick='zmenObsah(this,"obsah/sponzori.html")'><a></a>SPONZOŘI</td></tr>
                             <tr><td class="item" onclick='zmenObsah(this,"obsah/pokynyautorum.html")'><a></a>POKYNY AUTORŮM</td></tr>
+							<tr><td class="item" onclick='nactiSchvalenePrispevky(this)'><a></a>PŘÍSPĚVKY</td></tr>
                         </table>
                     </div>
                 </td>

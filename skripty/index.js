@@ -71,6 +71,20 @@ function prihlaseniDB(jmeno, heslo) {
   });
 }
 
+function nactiSchvalenePrispevky(odkud) {
+	$.ajax({
+    type: 'GET',
+    url: 'skripty/php/nactivsechnyprispevky.php',
+    success: function(msg) {
+		var obsah = $(document).find('div.obsah');
+		obsah .empty();
+		obsah .append(msg);
+		$('td.itemact').attr('class', 'item');
+		$(odkud).attr('class','itemact');
+	}
+  });
+}
+
 
 /**
 	Obsluha vrácených hodnot z kontroly loginu
@@ -133,8 +147,9 @@ function pridejUzivatelskeMoznosti(opravneni){
 		menu.append('<tr id="uzivatelske"><td class="item"  onclick=\'nahrajPrispevky(this)\'><a></a>MOJE PŘÍSPĚVKY</td></tr>');
 	} else if(opravneni == "admin") {
 		menu.append('<tr id="uzivatelske"><td class="item" id="uzivatelske" onclick=\'nactiAdministraci(this)\'><a></a>SPRÁVA ČLÁNKŮ</td></tr>');
+		menu.append('<tr id="uzivatelske"><td class="item" id="uzivatelske" onclick=\'nactiUzivatele(this)\'><a></a>SPRÁVA UŽIVATELŮ</td></tr>');
 	} else if(opravneni == "recenzent") {
-	menu.append('<tr id="uzivatelske"><td class="item"  onclick=\'nactiClanky(this)\'><a></a>RECENZE</td></tr>');
+		menu.append('<tr id="uzivatelske"><td class="item"  onclick=\'nactiClanky(this)\'><a></a>RECENZE</td></tr>');
 	}
 	
 }
@@ -158,7 +173,7 @@ function logout() {
 	var buttonek = $('td.prihlasovani');
 	buttonek.empty();
 	buttonek.append('<a>přihlásit</a>');
-	buttonek.attr("onclick", 'zmenObsah("","obsah/prihlaseni.html")');
+	buttonek.attr("onclick", '$(document).find("td.itemact").attr("class", "item");zmenObsah("","obsah/prihlaseni.html")');
 	odeberUzivatelskeMoznosti();
 	$('td.item:first').click();
 	$.ajax({url: 'skripty/php/odhlaseni.php', succes : function(msg){

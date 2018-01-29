@@ -1,8 +1,15 @@
+//zkontroluje zda-li je přihlášen admin
+function zkontrolujPravaAdm(){
+	return uzivatel.opravneni=="admin";
+}
+
 /**
 	Načte formulář administrace z databáze
 */
-
 function nactiAdministraci(odkud) {
+	if (!zkontrolujPravaAdm()) {
+		alert("Chyba - nemáte oprávnění");
+		return;}
 	$.ajax({
     type: 'GET',
     url: 'skripty/php/administrace.php',
@@ -20,6 +27,9 @@ function nactiAdministraci(odkud) {
 	Zkontroluje zda-li byli vyplněni všichni recenzenti ve formuláři přiřazení recenzentů a zavolá požadavek k uložení do DB
 */
 function validujRecenzenti(){
+	if (!zkontrolujPravaAdm()) {
+		alert("Chyba - nemáte oprávnění");
+		return;}
 	var w = document.getElementById('formprirazeni1').options[document.getElementById('formprirazeni1').selectedIndex].text;
 	var x = document.getElementById('formprirazeni2').options[document.getElementById('formprirazeni2').selectedIndex].text;
 	var y = document.getElementById('formprirazeni3').options[document.getElementById('formprirazeni3').selectedIndex].text;
@@ -47,6 +57,9 @@ function validujRecenzenti(){
 	Zobrazí formulář přiřazení recenzentů
 */
 function zobrazFormular(recenzenti, id){
+	if (!zkontrolujPravaAdm()) {
+		alert("Chyba - nemáte oprávnění");
+		return;}
 	var moznosti = "";
 	for( var i=0; i < recenzenti.length; i++) {
 		if(recenzenti[i])
@@ -70,6 +83,9 @@ function zobrazFormular(recenzenti, id){
 	Pošle požadavek k uložení příspěvku DB
 */
 function schvalPrispevek(id) {
+	if (!zkontrolujPravaAdm()) {
+		alert("Chyba - nemáte oprávnění");
+		return;}
 	var dataString= 'id='+id; 
 	$.ajax({
     type: 'GET',
@@ -89,6 +105,16 @@ function schvalPrispevek(id) {
 	Pošle požadavek k odstranění příspěvku DB
 */
 function smazPrispevek(id) {
+	if (!zkontrolujPravaAdm() && !zkontrolujPravaUz()) {
+		alert("Chyba - nemáte oprávnění");
+		return;}
+		
+	var hlaska = 'Chcete opravdu smazat příspěvek ?'; 
+	var vysledek = confirm(hlaska);
+	if(!vysledek){
+		return false;
+	};   
+	
 	var dataString = 'id=' + id;
 	$.ajax({
     type: 'GET',
@@ -108,6 +134,9 @@ function smazPrispevek(id) {
 	Pošle požadavek přiřazení recenzentů do DB
 */
 function posliPozadavek(w,x,y,id) {
+	if (!zkontrolujPravaAdm()) {
+		alert("Chyba - nemáte oprávnění");
+		return;}
 	var dataString = 'rec1=' + w + '&rec2=' + x + '&rec3=' + y + '&id=' + id;
 	$.ajax({
     type: 'POST',
@@ -125,9 +154,128 @@ function posliPozadavek(w,x,y,id) {
 }
 
 /**
+	Načte všechny uživatele do tabulky
+*/
+function nactiUzivatele(odkud) {
+	if (!zkontrolujPravaAdm()) {
+		alert("Chyba - nemáte oprávnění");
+		return;}
+	$.ajax({
+    type: 'GET',
+    url: 'skripty/php/nactivsechnyuzivatele.php',
+    success: function(msg) {
+		var obsah = $(document).find('div.obsah');
+		obsah .empty();
+		obsah .append(msg);
+		$('td.itemact').attr('class', 'item');
+		$(odkud).attr('class','itemact');
+			
+		}
+	});
+}
+
+/**
+	Zkontroluje zda-li je možné smazat uživatele a zeptá se, jestli to myslíte vážně.
+*/
+function smazUzivatele(jmeno) {
+	if(uzivatel.opravneni != "admin") {
+		alert("nemáte oprávnění");
+	} else {
+		var hlaska = 'Chcete opravdu smazat uživatele: ' + jmeno + " ?\n POZOR : Smažete tím všechny jeho příspěvky a všechny recenze !"; 
+		var vysledek = confirm(hlaska);
+		if(vysledek){
+		   posliSmazani(jmeno);
+		} else {
+		   return false;
+	   };   
+	}
+	
+}
+
+/**
+	Vytvoří formulář pro editaci role uživatele
+*/
+function editujUzivatele(prezdivka, jmeno, prijmeni, opravneni) {
+	if (!zkontrolujPravaAdm()) {
+		alert("Chyba - nemáte oprávnění");
+		return;}
+	var radek = '<table class="admintable" width="100%">';
+	radek+= '<tbody><tr><td>' + prezdivka + '</td>';
+	radek+='<td>' + jmeno + '</td>';
+	radek+='<td>' + prijmeni + '</td>';
+	radek+='<td> <select class="vyber" name="role">';
+	if(opravneni=="uzivatel"){
+		radek+='<option value="uzivatel" selected>Uživatel</option>';
+		radek+='<option value="recenzent">Recenzent</option>';
+	} else {
+		radek+='<option value="recenzent" selected>Recenzent</option>';
+		radek+='<option value="uzivatel">Uživatel</option>';
+	}
+	radek+='</select> </td>';
+	radek+='<td>';
+	radek+= "<a class=\"button\" onclick=\"posliEditaci('"+ prezdivka + "','"+opravneni+"')\" \x3E Uložit</a>";
+	radek+='</td></tr></tbody></table>';
+	var obsah = $(document).find('div.obsah');
+	obsah.empty();
+	obsah.append(radek);
+
+}
+
+/**
+	Odešle data o editaci role uživatele do DB přes AJAX
+*/
+function posliEditaci(jmeno, opravneni){
+	if (!zkontrolujPravaAdm()) {
+		alert("Chyba - nemáte oprávnění");
+		return;}
+	var vybrano = $('select.vyber').val();
+	var dataString = 'jmeno=' + jmeno + '&typ=' + vybrano;
+	if(vybrano==opravneni) {
+		$('td.itemact').click();
+	} else {
+		$.ajax({
+		type: 'POST',
+		data : dataString,
+		url: 'skripty/php/kontrola/zmenarolekontrola.php',
+		success: function(msg) {
+		if(msg == 1) 
+			$('td.itemact').click();
+		else {
+			alert(msg);
+		}
+		}
+	});
+	}
+}
+
+/**
+	Pošle požadavek přes AJAX do databáze na smazání uživatele
+*/
+function posliSmazani(jmeno){
+	if (!zkontrolujPravaAdm()) {
+		alert("Chyba - nemáte oprávnění");
+		return;}
+	var dataString = 'jmeno=' + jmeno;
+	$.ajax({
+    type: 'POST',
+	data : dataString,
+    url: 'skripty/php/kontrola/smazuzivatele.php',
+    success: function(msg) {
+		if(msg==1){
+			$('td.itemact').click();
+		} else {
+			alert(msg);
+		}
+	}
+	});
+}
+/**
 	Načte recenzenty z DB
 */
 function nactiRecenzenty(id){
+	if (!zkontrolujPravaAdm()) {
+		alert("Chyba - nemáte oprávnění");
+		return;}
 	var recenzenti;
 	$.ajax({
     type: 'GET',

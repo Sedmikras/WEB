@@ -1,7 +1,15 @@
+//zkontroluje zda-li je přihlášen recenzent
+function zkontrolujPravaRec(){
+	return uzivatel.opravneni=="recenzent";
+}
+
 /**
 	Načte články které mají být recenzovány z databáze
 */
 function nactiClanky(odkud) {
+	if (!zkontrolujPravaRec()) {
+		alert("Chyba - nemáte oprávnění");
+		return;}
 	$.ajax({
     type: 'GET',
     url: 'skripty/php/ukazclanky.php',
@@ -19,6 +27,9 @@ function nactiClanky(odkud) {
 	Načte obsah článku a recenzovací formulář z databáze
 */
 function recenzuj(id) {
+	if (!zkontrolujPravaRec()) {
+		alert("Chyba - nemáte oprávnění");
+		return;}
 	$.ajax({
     type: 'GET',
     url: 'skripty/php/zobrazrecenzi.php',
@@ -35,6 +46,9 @@ function recenzuj(id) {
 	Provede kontrolu provedené recenze - zda-li byla vyplněna všechna kritéria a pošle recenzi k uložení
 */
 function validujRecenzi(id) {
+	if (!zkontrolujPravaRec()) {
+		alert("Chyba - nemáte oprávnění");
+		return;}
 	var originalita=$('select#r1.selectrec option:selected').text();
 	var tema=$('select#r2.selectrec option:selected').text();
 	var technika=$('select#r3.selectrec option:selected').text();
