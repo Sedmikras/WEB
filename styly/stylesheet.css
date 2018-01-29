@@ -7,6 +7,7 @@
     body {
 		font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
         background-color: #A9A9A9;
+		overflow: hidden;
     }
 }
 
@@ -26,7 +27,6 @@
 		-o-background-size: cover;
 		background-size: cover;
 		height: 100%;
-		overflow: hidden;
 	}
 }
 
