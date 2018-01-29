@@ -3,14 +3,31 @@
     padding: 0px;
 }
 
-body {
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-    /*font-family: 'Teko', sans-serif;*/
-    background-image: url(../obr/konf.jpg);
-    background-repeat: no-repeat, repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    /*background: #337ab7;*/
+@media only screen and (max-width: 768px) {
+    body {
+		font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+        background-color: #A9A9A9;
+    }
+}
+
+@media only screen and (orientation: landscape) {
+    body {
+       font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+       background-color: #A9A9A9;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+	body {
+		font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+		background: url(../obr/konf.jpg) no-repeat center center fixed;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		height: 100%;
+		overflow: hidden;
+	}
 }
 
 a {
@@ -38,13 +55,13 @@ a {
     margin: 5pt 5pt 5pt 5pt;
 }
 
-    .hlavicka a {
-        font-size: 40px;
-        font-weight: bold;
-        color: #0c0c0c;
-        text-decoration: none;
-        padding: 0px 0px 0px 10px;
-    }
+.hlavicka a {
+	font-size: 40px;
+	font-weight: bold;
+	color: #0c0c0c;
+	text-decoration: none;
+	padding: 0px 0px 0px 10px;
+}
 
 .paticka {
     margin: 5pt;
@@ -139,15 +156,12 @@ a {
     font-weight: bold;
 }
 
-    #nahoru a {
-        font-size: 16px;
-        color: #0c0c0c;
-        text-decoration: none;
-    }
+#nahoru a {
+	font-size: 16px;
+	color: #0c0c0c;
+	text-decoration: none;
+}
 
-        #nahoru a:hover {
-            /*color: blue;*/
-        }
 
 #valid {
     border-right: 2px dashed #0000FF;
@@ -165,9 +179,9 @@ a {
     margin-left: 2px;
 }
 
-    #logo:hover {
-        filter: none;
-    }
+#logo:hover {
+	filter: none;
+}
 
 
 .uzivatel {
@@ -175,15 +189,15 @@ a {
 }
 
 
-    .uzivatel a {
-        font-size: 14px;
-        color: blue;
-    }
+.uzivatel a {
+	font-size: 14px;
+	color: blue;
+}
 
 
-        .uzivatel a:hover {
-            text-decoration: underline;
-        }
+.uzivatel a:hover {
+	text-decoration: underline;
+}
 
 
 .prihlasovani {
@@ -195,73 +209,23 @@ a {
 }
 
 
-    .prihlasovani a {
-        font-size: 18px;
-        color: white !important;
-        font-weight: normal;
-    }
-
-
-    .prihlasovani:hover {
-        background: white;
-        color: #0c0c0c !important;
-        border: 2px solid #0c0c0c;
-    }
-
-    .prihlasovani a:hover {
-        background: white;
-        color: #0c0c0c !important;
-    }
-
-
-#left {
-    float: left;
-    width: 20%;
+.prihlasovani a {
+	font-size: 18px;
+	color: white !important;
+	font-weight: normal;
 }
 
 
-#menulog {
-    padding: 5px;
-    float: top;
-    margin-bottom: 10px;
+.prihlasovani:hover {
+	background: white;
+	color: #0c0c0c !important;
+	border: 2px solid #0c0c0c;
 }
 
-
-#menu {
-    padding: 5px;
-    float: bottom;
+.prihlasovani a:hover {	
+background: white;
+color: #0c0c0c !important;
 }
-
-
-#content {
-    font-size: 14px;
-    margin-left: 10px;
-    padding: 5px;
-    padding-left: 15px;
-    float: left;
-    width: 75%;
-}
-
-
-    #content h1 {
-        font-size: 18px;
-        margin: 3px;
-        margin-bottom: 0px;
-        color: #000000;
-    }
-
-
-    #content a {
-        color: #777777;
-        text-decoration: underline;
-    }
-
-
-        #content a:hover {
-            text-decoration: underline;
-            color: #AA0000;
-        }
-
 
 #upload {
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
@@ -301,11 +265,11 @@ a {
     text-decoration: none;
 }
 
-    #uploadbutton:hover, #recenzebutton:hover {
-        background: white;
-        color: #0c0c0c;
-        border: 2px solid #0c0c0c;
-    }
+#uploadbutton:hover, #recenzebutton:hover {
+	background: white;
+	color: #0c0c0c;
+	border: 2px solid #0c0c0c;
+}
 
 
 #odrazka {
@@ -331,10 +295,10 @@ a {
 }
 
 
-    .formtable td {
-        font-size: 15px;
-        padding: 2px;
-    }
+.formtable td {
+	font-size: 15px;
+	padding: 2px;
+}
 
 
 .usertable, .admintable {
@@ -345,82 +309,82 @@ a {
 
 
 
-    .usertable td {
-        border: solid 1px #0c0c0c;
-        font-size: 15px;
-        padding: 10px;
-        text-align: center;
-    }
+.usertable td {
+	border: solid 1px #0c0c0c;
+	font-size: 15px;
+	padding: 10px;
+	text-align: center;
+}
 
 
-    .usertable tr.nadpis td {
-        font-size: 20px;
-        border-bottom: 2px solid #0c0c0c;
-    }
+.usertable tr.nadpis td {
+	font-size: 20px;
+	border-bottom: 2px solid #0c0c0c;
+}
 
 
-    .admintable td {
-        border: solid 1px #0c0c0c;
-        font-size: 13px;
-        padding: 10px;
-        text-align: center;
-    }
+.admintable td {
+	border: solid 1px #0c0c0c;
+	font-size: 13px;
+	padding: 10px;
+	text-align: center;
+}
 
 
-    .admintable tr.nadpis td {
-        font-size: 15px;
-        border-bottom: 2px solid #0c0c0c;
-    }
+.admintable tr.nadpis td {
+	font-size: 15px;
+	border-bottom: 2px solid #0c0c0c;
+}
 
-        .admintable tr.nadpis td.nadpis2 {
-            font-size: 15px;
-            border-bottom: 1px dashed #0c0c0c;
-        }
-
-
-
-    .admintable tr.nadpisrec td {
-        font-size: 15px;
-        border: 1px #0c0c0c dashed;
-        border-bottom: 2px #0c0c0c solid;
-    }
+.admintable tr.nadpis td.nadpis2 {
+	font-size: 15px;
+	border-bottom: 1px dashed #0c0c0c;
+}
 
 
 
-    .admintable td.recenze {
-        font-size: 10px;
-        padding: 2px;
-        height: 20px;
-        border: 1px #0c0c0c dashed;
-    }
-
-    .admintable td.recenzelast {
-        font-size: 10px;
-        padding: 2px;
-        height: 20px;
-        border: 1px #0c0c0c dashed;
-        border-bottom: 1px #0c0c0c solid;
-    }
+.admintable tr.nadpisrec td {
+	font-size: 15px;
+	border: 1px #0c0c0c dashed;
+	border-bottom: 2px #0c0c0c solid;
+}
 
 
-    .admintable td.odkaz {
-        border-bottom-style: hidden;
-    }
 
-        .admintable td.odkaz a {
-            margin: 6px;
-        }
+.admintable td.recenze {
+	font-size: 10px;
+	padding: 2px;
+	height: 20px;
+	border: 1px #0c0c0c dashed;
+}
+
+.admintable td.recenzelast {
+	font-size: 10px;
+	padding: 2px;
+	height: 20px;
+	border: 1px #0c0c0c dashed;
+	border-bottom: 1px #0c0c0c solid;
+}
 
 
-    .admintable td.odkazlast {
-        border-bottom: 1px solid #0c0c0c;
-        padding: 2px;
-        padding-bottom: 0px;
-    }
+.admintable td.odkaz {
+	border-bottom-style: hidden;
+}
 
-        .admintable td.odkazlast a {
-            margin: 6px;
-        }
+.admintable td.odkaz a {
+	margin: 6px;
+}
+
+
+.admintable td.odkazlast {
+	border-bottom: 1px solid #0c0c0c;
+	padding: 2px;
+	padding-bottom: 0px;
+}
+
+.admintable td.odkazlast a {
+	margin: 6px;
+}
 
 
 
@@ -501,11 +465,11 @@ a {
 }
 
 
-    .button:hover {
-        background: white;
-        color: #0c0c0c;
-        border: 2px solid #0c0c0c;
-    }
+.button:hover {
+	background: white;
+	color: #0c0c0c;
+	border: 2px solid #0c0c0c;
+}
 
 
 .warning {
